@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="card my-3">
+    <div class="card-header">
+      <h2>Factura</h2>
+    </div>
+    <div class="card-body">
+      <!-- Información básica de la factura -->
+      <ul>
+        <li><strong>ID:</strong> {{ invoiceId }}</li>
+        <li><strong>Nombre:</strong> {{ invoiceName }}</li>
+      </ul>
+
+      <!-- Información del cliente -->
+      <h3>Datos del Cliente</h3>
+      <ul>
+        <li><strong>Nombre:</strong> {{ client.name }}</li>
+        <li><strong>Dirección:</strong> {{ client.address }}</li>
+      </ul>
+
+      <!-- Lista de productos -->
+      <h4>Productos</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Laptop Gamer</td>
+            <td>${{ products[0].price }}</td>
+            <td>{{ products[0].quantity }}</td>
+            <td>${{ products[0].price * products[0].quantity }}</td>
+          </tr>
+          <tr>
+            <td>Mouse Inalámbrico</td>
+            <td>${{ products[1].price }}</td>
+            <td>{{ products[1].quantity }}</td>
+            <td>${{ products[1].price * products[1].quantity }}</td>
+          </tr>
+          <tr>
+            <td>Teclado Mecánico</td>
+            <td>${{ products[2].price }}</td>
+            <td>{{ products[2].quantity }}</td>
+            <td>${{ products[2].price * products[2].quantity }}</td>
+          </tr>
+          <tr>
+            <td>Monitor 27 pulgadas</td>
+            <td>${{ products[3].price }}</td>
+            <td>{{ products[3].quantity }}</td>
+            <td>${{ products[3].price * products[3].quantity }}</td>
+          </tr>
+          <tr>
+            <td>Auriculares Gaming</td>
+            <td>${{ products[4].price }}</td>
+            <td>{{ products[4].quantity }}</td>
+            <td>${{ products[4].price * products[4].quantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Total de la factura -->
+      <h4><strong>Total:</strong> ${{ getTotal() }}</h4>
+    </div>
+  </div>
+</div>
